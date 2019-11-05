@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
-                android:text="@string/card_nickname"
+                android:text="@string/quick_search"
                 android:layout_marginEnd="@dimen/margin"
                 style="@style/p"/>
             <Spinner

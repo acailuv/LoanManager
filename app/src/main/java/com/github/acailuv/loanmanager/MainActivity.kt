@@ -25,5 +25,18 @@ class MainActivity : AppCompatActivity() {
         // Set Adapter to Spinner
         binding.cardSelectSpinner!!.adapter = aa
 
+        /**
+         * TODO: Card Entry
+         * > Card Number
+         * > Name
+         * > Bank
+         * > Variant (Ex. BNI Titanium Style != BNI Garuda Indonesia != BNI Platinum)
+         * > Billing Cycle
+         * > Terms of Payment (Due date to pay for stuff. Ex: 5 days away from billing cycle)
+         * > Credit Limit
+         */
+
+        // Installment page
+
     }
 }
