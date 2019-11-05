@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LoanManager</string>
+    <string name="about_you">About You</string>
+    <string name="your_monthly_salary">Your Monthly Salary: </string>
+    <string name="payment_due_this_month">Payment Due This Month: </string>
+    <string name="your_cards">View Card Details</string>
+    <string name="card_nickname">Card Nickname</string>
+    <string name="nickname">Nickname: </string>
+    <string name="card_number">Card Number:</string>
+    <string name="loan_in_this_card">Loan in this card:</string>
+</resources>

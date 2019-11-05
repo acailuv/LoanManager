@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="h1">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/h1</item>
+        <item name="android:layout_marginBottom">@dimen/h1_marginBottom</item>
+        <item name="android:layout_marginTop">@dimen/h1_marginTop</item>
+    </style>
+
+    <style name="h2">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/h2</item>
+        <item name="android:layout_marginBottom">@dimen/h2_marginBottom</item>
+        <item name="android:layout_marginTop">@dimen/h2_marginTop</item>
+    </style>
+
+    <style name="p">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/p</item>
+    </style>
+
+</resources>
