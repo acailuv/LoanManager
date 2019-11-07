@@ -8,4 +8,7 @@
     <string name="nickname">Nickname: </string>
     <string name="card_number">Card Number:</string>
     <string name="loan_in_this_card">Loan in this card:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
