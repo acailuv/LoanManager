@@ -4,45 +4,23 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-
-    </data>
-
-    <androidx.drawerlayout.widget.DrawerLayout xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/drawer_layout"
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        tools:openDrawer="start">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+            <fragment
+                android:id="@+id/nav_host_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/colorPrimaryDark"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
-            <FrameLayout
-                android:id="@+id/fragment_container"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <fragment
-                    android:id="@+id/nav_host_fragment"
-                    android:name="androidx.navigation.fragment.NavHostFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:defaultNavHost="true"
-                    app:navGraph="@navigation/navigation" />
-
-            </FrameLayout>
-
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/navigation" />
         </LinearLayout>
 
         <com.google.android.material.navigation.NavigationView
@@ -54,5 +32,4 @@
             app:menu="@menu/drawer_menu" />
 
     </androidx.drawerlayout.widget.DrawerLayout>
-
 </layout>

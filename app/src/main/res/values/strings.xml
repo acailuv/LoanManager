@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">LoanManager</string>
-    <string name="about_you">About You</string>
+    <string name="about_you">Dashboard</string>
     <string name="your_monthly_salary">Your Monthly Income: </string>
     <string name="payment_due_this_month">Payment Due This Month: </string>
     <string name="your_cards">View Card Details</string>
@@ -8,8 +8,6 @@
     <string name="nickname">Nickname: </string>
     <string name="card_number">Card Number:</string>
     <string name="loan_in_this_card">Loan in this card:</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
     <string name="add_a_credit_card_profile">Add a Credit Card Profile</string>
@@ -19,4 +17,19 @@
     <string name="add_an_installment">Add an Installment</string>
     <string name="view_installments">View Installments</string>
     <string name="manage_installments">Manage Installments</string>
+    <string name="add_a_card">Add a Card</string>
+    <string name="card_nickname">Card Nickname</string>
+    <string name="card_holder">Name of Card Holder</string>
+    <string name="issuing_bank">Issuing Bank</string>
+    <string name="variant_e_g_priority_sharia">Variant (e.g. Priority, Sharia)</string>
+    <string name="grade_e_g_silver_gold_platinum">Grade (e.g. Silver, Gold, Platinum)</string>
+    <string name="credit_limit">Credit Limit</string>
+    <string name="name">Name:</string>
+    <string name="card_number_no_colon">Card Number</string>
+    <string name="cards">Cards</string>
+    <string name="name_of_cardholder">Name of Cardholder:</string>
+    <string name="credit_limit_with_colon">Credit Limit:</string>
+    <string name="issuing_bank_with_colon">Issuing Bank:</string>
+    <string name="variant_with_colon">Variant:</string>
+    <string name="grade_with_colon">Grade:</string>
 </resources>

@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.github.acailuv.loanmanager.dashboard.DashboardFragmentViewModel" />
     </data>
 
     <LinearLayout
@@ -34,14 +37,36 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="@dimen/margin"
-                    android:text="@string/your_monthly_salary" />
+                    android:text="@string/name" />
 
                 <TextView
-                    android:id="@+id/about_you_salary"
+                    android:id="@+id/user_name"
                     style="@style/p"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Rp. xxxx-" />
+                    android:text="@{viewModel.user.name}" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/p"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/margin"
+                    android:text="@string/your_monthly_salary" />
+
+                <TextView
+                    android:id="@+id/monthly_income"
+                    style="@style/p"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@{String.valueOf(viewModel.user.monthlyIncome)}" />
 
             </LinearLayout>
 
@@ -62,7 +87,7 @@
                     style="@style/p"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Rp. xxxx-" />
+                    android:text="" />
 
             </LinearLayout>
 
@@ -101,7 +126,7 @@
             style="@style/h2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="[placeholder card nickname]" />
+            android:text="" />
 
         <LinearLayout
             android:id="@+id/card_details_container"
@@ -111,27 +136,11 @@
             android:orientation="vertical"
             android:padding="@dimen/padding">
 
-            <LinearLayout
+            <TextView
+                style="@style/h3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/p"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="@dimen/margin"
-                    android:text="@string/nickname"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/card_details_nickname"
-                    style="@style/p"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="[placeholder card nickname]" />
-
-            </LinearLayout>
+                android:text="@string/your_cards" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -151,9 +160,125 @@
                     style="@style/p"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="6547 xxxx xxxx xxxx" />
+                    android:text="" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/p"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/margin"
+                    android:text="@string/name_of_cardholder"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/cardholder_name"
+                    style="@style/p"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/p"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/margin"
+                    android:text="@string/credit_limit_with_colon"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/credit_limit"
+                    style="@style/p"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/p"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/margin"
+                    android:text="@string/issuing_bank_with_colon"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/issuing_bank"
+                    style="@style/p"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/p"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/margin"
+                    android:text="@string/variant_with_colon"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/variant"
+                    style="@style/p"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/p"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/margin"
+                    android:text="@string/grade_with_colon"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/grade"
+                    style="@style/p"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/h3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/installment"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -173,7 +298,7 @@
                     style="@style/p"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Rp. xxx-" />
+                    android:text="" />
 
             </LinearLayout>
 
