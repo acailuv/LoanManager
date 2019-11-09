@@ -9,4 +9,5 @@
     <dimen name="h2_marginBottom">8dp</dimen>
     <dimen name="p">18sp</dimen>
     <dimen name="margin">16dp</dimen>
+    <dimen name="elevation">4dp</dimen>
 </resources>

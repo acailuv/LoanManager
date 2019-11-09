@@ -7,5 +7,5 @@
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.github.acailuv.loanmanager.dashboard.DashboardFragment"
-        android:label="DashboardFragment" />
+        android:label="Home" />
 </navigation>

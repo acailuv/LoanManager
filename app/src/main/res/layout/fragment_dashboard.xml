@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -15,10 +14,10 @@
 
 
         <TextView
+            style="@style/h1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/about_you"
-            style="@style/h1" />
+            android:text="@string/about_you" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,18 +30,18 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    style="@style/p"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="@dimen/margin"
-                    android:text="@string/your_monthly_salary"
-                    style="@style/p" />
+                    android:text="@string/your_monthly_salary" />
 
                 <TextView
                     android:id="@+id/about_you_salary"
+                    style="@style/p"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Rp. xxxx-"
-                    style="@style/p" />
+                    android:text="Rp. xxxx-" />
 
             </LinearLayout>
 
@@ -52,28 +51,28 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    style="@style/p"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="@dimen/margin"
-                    android:text="@string/payment_due_this_month"
-                    style="@style/p" />
+                    android:text="@string/payment_due_this_month" />
 
                 <TextView
                     android:id="@+id/about_you_payment_due"
+                    style="@style/p"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Rp. xxxx-"
-                    style="@style/p" />
+                    android:text="Rp. xxxx-" />
 
             </LinearLayout>
 
         </LinearLayout>
 
         <TextView
+            style="@style/h1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/your_cards"
-            style="@style/h1" />
+            android:text="@string/your_cards" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -81,12 +80,12 @@
             android:orientation="horizontal">
 
             <TextView
+                style="@style/p"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textAlignment="center"
-                android:text="@string/quick_search"
                 android:layout_marginEnd="@dimen/margin"
-                style="@style/p" />
+                android:text="@string/quick_search"
+                android:textAlignment="center" />
 
             <Spinner
                 android:id="@+id/card_select_spinner"
@@ -99,10 +98,10 @@
 
         <TextView
             android:id="@+id/card_details_header"
+            style="@style/h2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="[placeholder card nickname]"
-            style="@style/h2" />
+            android:text="[placeholder card nickname]" />
 
         <LinearLayout
             android:id="@+id/card_details_container"
@@ -118,19 +117,19 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    style="@style/p"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:textAlignment="center"
-                    android:text="@string/nickname"
                     android:layout_marginEnd="@dimen/margin"
-                    style="@style/p" />
+                    android:text="@string/nickname"
+                    android:textAlignment="center" />
 
                 <TextView
                     android:id="@+id/card_details_nickname"
+                    style="@style/p"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="[placeholder card nickname]"
-                    style="@style/p" />
+                    android:text="[placeholder card nickname]" />
 
             </LinearLayout>
 
@@ -140,19 +139,19 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    style="@style/p"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:textAlignment="center"
-                    android:text="@string/card_number"
                     android:layout_marginEnd="@dimen/margin"
-                    style="@style/p" />
+                    android:text="@string/card_number"
+                    android:textAlignment="center" />
 
                 <TextView
                     android:id="@+id/card_details_number"
+                    style="@style/p"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="6547 xxxx xxxx xxxx"
-                    style="@style/p" />
+                    android:text="6547 xxxx xxxx xxxx" />
 
             </LinearLayout>
 
@@ -162,19 +161,19 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    style="@style/p"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:textAlignment="center"
-                    android:text="@string/loan_in_this_card"
                     android:layout_marginEnd="@dimen/margin"
-                    style="@style/p" />
+                    android:text="@string/loan_in_this_card"
+                    android:textAlignment="center" />
 
                 <TextView
                     android:id="@+id/card_details_loan"
+                    style="@style/p"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Rp. xxx-"
-                    style="@style/p" />
+                    android:text="Rp. xxx-" />
 
             </LinearLayout>
 

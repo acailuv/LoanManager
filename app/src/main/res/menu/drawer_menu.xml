@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
+
+
+    <item android:title="@string/your_cards">
+        <menu>
+            <item
+                android:id="@+id/nav_add_credit_card"
+                android:icon="@drawable/ic_add"
+                android:title="@string/add_a_credit_card_profile" />
+
+            <item
+                android:id="@+id/nav_view_credit_card"
+                android:icon="@drawable/ic_credit_card"
+                android:title="@string/view_credit_card_details" />
+
+            <item
+                android:id="@+id/nav_edit_credit_card"
+                android:icon="@drawable/ic_edit"
+                android:title="@string/manage_credit_cards" />
+        </menu>
+    </item>
+
+    <item android:title="@string/installment">
+        <menu>
+            <item
+                android:id="@+id/nav_add_installment"
+                android:icon="@drawable/ic_add_installment"
+                android:title="@string/add_an_installment" />
+
+            <item
+                android:id="@+id/nav_view_installment"
+                android:icon="@drawable/ic_installment"
+                android:title="@string/view_installments" />
+
+            <item
+                android:id="@+id/nav_edit_installment"
+                android:icon="@drawable/ic_edit"
+                android:title="@string/manage_installments" />
+        </menu>
+    </item>
+
+</menu>
