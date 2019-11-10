@@ -15,12 +15,12 @@
                 android:title="@string/add_a_credit_card_profile" />
 
             <item
-                android:id="@+id/nav_view_credit_card"
+                android:id="@+id/nav_view_cards"
                 android:icon="@drawable/ic_credit_card"
                 android:title="@string/view_credit_card_details" />
 
             <item
-                android:id="@+id/nav_edit_credit_card"
+                android:id="@+id/manageCardFragment"
                 android:icon="@drawable/ic_edit"
                 android:title="@string/manage_credit_cards" />
         </menu>

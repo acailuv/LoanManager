@@ -20,6 +20,7 @@
             style="@style/h1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
             android:text="@string/about_you" />
 
         <LinearLayout
@@ -278,7 +279,7 @@
                 style="@style/h3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/installment"/>
+                android:text="@string/installment" />
 
             <LinearLayout
                 android:layout_width="match_parent"

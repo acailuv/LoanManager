@@ -18,4 +18,13 @@
             android:id="@+id/action_addCardFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/manageCardFragment"
+        android:name="com.github.acailuv.loanmanager.manage_card.ManageCardFragment"
+        android:label="Manage Credit Cards"
+        tools:layout="@layout/fragment_manage_card">
+        <action
+            android:id="@+id/action_manageCardFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
 </navigation>

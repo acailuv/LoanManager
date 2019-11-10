@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.github.acailuv.loanmanager.R
+import com.github.acailuv.loanmanager.ViewModelFactory
 import com.github.acailuv.loanmanager.add_card.AddCardFragmentViewModel
 import com.github.acailuv.loanmanager.database.AppDatabase
 import com.github.acailuv.loanmanager.databinding.FragmentDashboardBinding
@@ -38,7 +39,7 @@ class DashboardFragment : Fragment() {
         val cardDataSource = AppDatabase.getInstance(application).cardDao
         val installmentDataSource = AppDatabase.getInstance(application).installmentDao
 
-        val viewModelFactory = DashboardFragmentViewModelFactory(
+        val viewModelFactory = ViewModelFactory(
             userDataSource,
             cardDataSource,
             installmentDataSource,

@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.github.acailuv.loanmanager.R
+import com.github.acailuv.loanmanager.ViewModelFactory
 import com.github.acailuv.loanmanager.dashboard.DashboardFragmentViewModel
 import com.github.acailuv.loanmanager.database.AppDatabase
 import com.github.acailuv.loanmanager.databinding.FragmentAddCardBinding
@@ -33,7 +34,7 @@ class AddCardFragment : Fragment() {
         val cardDataSource = AppDatabase.getInstance(application).cardDao
         val installmentDataSource = AppDatabase.getInstance(application).installmentDao
 
-        val viewModelFactory = AddCardFragmentViewModelFactory(
+        val viewModelFactory = ViewModelFactory(
             userDataSource,
             cardDataSource,
             installmentDataSource,
