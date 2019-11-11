@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.github.acailuv.loanmanager.view_card.ViewCardFragmentViewModel" />
     </data>
 
     <LinearLayout

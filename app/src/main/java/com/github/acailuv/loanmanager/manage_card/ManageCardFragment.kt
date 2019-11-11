@@ -11,15 +11,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.github.acailuv.loanmanager.CardItemAdapter
 import com.github.acailuv.loanmanager.R
 import com.github.acailuv.loanmanager.ViewModelFactory
 import com.github.acailuv.loanmanager.database.AppDatabase
-import com.github.acailuv.loanmanager.database.Card
 import com.github.acailuv.loanmanager.databinding.FragmentManageCardBinding
-
-/**
- * TODO (Give listeners to each of RecyclerView's items)
- */
 
 class ManageCardFragment : Fragment() {
 
@@ -41,7 +37,6 @@ class ManageCardFragment : Fragment() {
         val viewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(ManageCardFragmentViewModel::class.java)
 
-        viewModel.initializeCardList()
 
         // Recycler View stuff
         val recyclerView = binding.recyclerView

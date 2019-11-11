@@ -9,68 +9,76 @@
             type="com.github.acailuv.loanmanager.add_card.AddCardFragmentViewModel" />
     </data>
 
-    <LinearLayout
-        android:id="@+id/main_container"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="@dimen/padding">
+        android:layout_height="match_parent">
 
-        <TextView
-            style="@style/h1"
+        <LinearLayout
+            android:id="@+id/main_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/add_a_card" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/padding">
 
-        <EditText
-            android:id="@+id/card_nickname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/card_nickname" />
+            <TextView
+                style="@style/h1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@string/add_a_card" />
 
-        <EditText
-            android:id="@+id/card_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/card_number_no_colon" />
+            <EditText
+                android:id="@+id/card_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/card_nickname" />
 
-        <EditText
-            android:id="@+id/cardholder_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/card_holder" />
+            <EditText
+                android:id="@+id/card_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/card_number_no_colon" />
 
-        <EditText
-            android:id="@+id/credit_limit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/credit_limit"
-            android:inputType="number" />
+            <EditText
+                android:id="@+id/cardholder_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/card_holder" />
 
-        <EditText
-            android:id="@+id/issuing_bank"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/issuing_bank" />
+            <EditText
+                android:id="@+id/credit_limit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/credit_limit"
+                android:inputType="number" />
 
-        <EditText
-            android:id="@+id/variant"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/variant_e_g_priority_sharia" />
+            <EditText
+                android:id="@+id/issuing_bank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/issuing_bank" />
 
-        <EditText
-            android:id="@+id/grade"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/grade_e_g_silver_gold_platinum" />
+            <EditText
+                android:id="@+id/variant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/variant_e_g_priority_sharia" />
 
-        <Button
-            android:id="@+id/add_card_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.onAddButtonClicked(cardNickname, cardNumber, cardholderName, creditLimit, issuingBank, variant, grade)}"
-            android:text="@string/add_a_card" />
+            <EditText
+                android:id="@+id/grade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/grade_e_g_silver_gold_platinum" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/add_card_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.onAddButtonClicked(cardNickname, cardNumber, cardholderName, creditLimit, issuingBank, variant, grade)}"
+                android:text="@string/add_a_card" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </layout>

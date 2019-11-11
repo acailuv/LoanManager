@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -19,11 +20,11 @@
             android:orientation="vertical"
             android:padding="@dimen/padding">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="@{() -> viewModel.clearAllTable()}"
-                android:text="Clear database" />
+<!--            <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:onClick="@{() -> viewModel.clearAllTable()}"-->
+<!--                android:text="Clear database" />-->
 
             <TextView
                 style="@style/h1"
@@ -315,8 +316,10 @@
             </LinearLayout>
 
             <com.jjoe64.graphview.GraphView
+                android:id="@+id/graph"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="200dip"
+                android:layout_marginTop="32dp"/>
 
         </LinearLayout>
 

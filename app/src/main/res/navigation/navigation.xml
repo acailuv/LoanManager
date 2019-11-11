@@ -36,10 +36,36 @@
         android:label="Change Card Details"
         tools:layout="@layout/fragment_change_card_details">
         <argument
-            android:name="currentCard"
+            android:name="currentCardId"
             app:argType="long" />
         <action
             android:id="@+id/action_changeCardDetailsFragment_to_manageCardFragment"
-            app:destination="@id/manageCardFragment" />
+            app:destination="@id/manageCardFragment"
+            app:popUpTo="@+id/dashboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewCardFragment"
+        android:name="com.github.acailuv.loanmanager.view_card.ViewCardFragment"
+        android:label="View Your Cards"
+        tools:layout="@layout/fragment_view_card">
+        <action
+            android:id="@+id/action_viewCardFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_viewCardFragment_to_viewCardDetailsFragment"
+            app:destination="@id/viewCardDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewCardDetailsFragment"
+        android:name="com.github.acailuv.loanmanager.view_card.ViewCardDetailsFragment"
+        android:label="Your Card's Details"
+        tools:layout="@layout/fragment_view_card_details">
+        <argument
+            android:name="currentCardId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_viewCardDetailsFragment_to_viewCardFragment"
+            app:destination="@id/viewCardFragment"
+            app:popUpTo="@+id/dashboardFragment" />
     </fragment>
 </navigation>

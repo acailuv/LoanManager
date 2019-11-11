@@ -26,6 +26,9 @@ class DashboardFragmentViewModel(
     private val _spinnerContent = MutableLiveData<List<String>>()
     val spinnerContent: LiveData<List<String>>
         get() = _spinnerContent
+        init {
+            initializeSpinnerContent()
+        }
 
     var user = MutableLiveData<User>()
     init{

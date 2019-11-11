@@ -23,6 +23,9 @@ class ManageCardFragmentViewModel(
     private val _cardList = MutableLiveData<List<Card>>()
     val cardList: LiveData<List<Card>>
         get() = _cardList
+        init {
+            initializeCardList()
+        }
 
     fun initializeCardList() {
         uiScope.launch {

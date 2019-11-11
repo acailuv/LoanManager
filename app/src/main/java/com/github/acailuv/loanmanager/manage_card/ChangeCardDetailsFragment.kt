@@ -44,7 +44,7 @@ class ChangeCardDetailsFragment : Fragment() {
                 cardDataSource,
                 installmentDataSource,
                 application,
-                arguments.currentCard
+                arguments.currentCardId
             )
         val viewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(ChangeCardDetailsFragmentViewModel::class.java)
@@ -59,7 +59,6 @@ class ChangeCardDetailsFragment : Fragment() {
             binding.grade.hint = currentCard.grade
         })
 
-        val CANNOT_EMPTY = " cannot be empty!"
         viewModel.exitStatus.observe(this, Observer { status ->
             when (status) {
                 "OK" -> {

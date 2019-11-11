@@ -1,6 +1,7 @@
 package com.github.acailuv.loanmanager.dashboard
 
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,13 +14,16 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.github.acailuv.loanmanager.R
 import com.github.acailuv.loanmanager.ViewModelFactory
-import com.github.acailuv.loanmanager.add_card.AddCardFragmentViewModel
 import com.github.acailuv.loanmanager.database.AppDatabase
 import com.github.acailuv.loanmanager.databinding.FragmentDashboardBinding
+import com.jjoe64.graphview.LegendRenderer
+import com.jjoe64.graphview.series.LineGraphSeries
+import com.jjoe64.graphview.series.DataPoint
+
 
 /**
  * TODO(1) Monthly Loan
- * TODO(3) Graph
+ * TODO(2) Graph
  */
 
 class DashboardFragment : Fragment() {
@@ -47,9 +51,6 @@ class DashboardFragment : Fragment() {
         )
         viewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(DashboardFragmentViewModel::class.java)
-
-        viewModel.initializeUserInfo()
-        viewModel.initializeSpinnerContent()
 
         viewModel.spinnerContent.observe(this, Observer {
             if (it.isEmpty()) {
@@ -100,6 +101,49 @@ class DashboardFragment : Fragment() {
             binding.userName.text = it.name
             binding.monthlyIncome.text = it.monthlyIncome.toString()
         })
+
+        // Graph Testing
+        val graph = binding.graph
+        graph.title = "Installment Vs. Income"
+        graph.viewport.setScrollableY(true)
+
+        val series = LineGraphSeries<DataPoint>(
+            arrayOf(
+                DataPoint(0.0, -2.0),
+                DataPoint(1.0, 5.0),
+                DataPoint(2.0, 3.0),
+                DataPoint(3.0, 2.0),
+                DataPoint(4.0, 6.0),
+                DataPoint(5.0, -2.0),
+                DataPoint(6.0, 5.0),
+                DataPoint(7.0, 3.0),
+                DataPoint(8.0, 2.0),
+                DataPoint(9.0, 6.0)
+            )
+        )
+        series.color = Color.GREEN
+        series.title = "Income"
+        graph.addSeries(series)
+
+        val series2 = LineGraphSeries<DataPoint>(
+            arrayOf(
+                DataPoint(0.0, 3.0),
+                DataPoint(1.0, 3.0),
+                DataPoint(2.0, 6.0),
+                DataPoint(3.0, 2.0),
+                DataPoint(4.0, 5.0),
+                DataPoint(5.0, 3.0),
+                DataPoint(6.0, 3.0),
+                DataPoint(7.0, 6.0),
+                DataPoint(8.0, 2.0),
+                DataPoint(9.0, 5.0)
+            )
+        )
+        series2.color = Color.RED
+        series2.title = "Installments"
+        graph.addSeries(series2)
+        graph.legendRenderer.isVisible = true
+        graph.legendRenderer.align = LegendRenderer.LegendAlign.BOTTOM
 
         binding.lifecycleOwner = this
         binding.viewModel = viewModel

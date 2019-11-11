@@ -11,11 +11,6 @@ import com.github.acailuv.loanmanager.database.InstallmentDao
 import com.github.acailuv.loanmanager.database.UserDao
 import kotlinx.coroutines.*
 
-
-/**
- * TODO: Pass data using SafeArgs from recycler view
- */
-
 class ChangeCardDetailsFragmentViewModel(
     val userTable: UserDao,
     val cardTable: CardDao,
@@ -36,7 +31,6 @@ class ChangeCardDetailsFragmentViewModel(
         get() = _confirmDelete
 
     val currentCard = MutableLiveData<Card>()
-
     init {
         initializeCurrentCard()
     }
