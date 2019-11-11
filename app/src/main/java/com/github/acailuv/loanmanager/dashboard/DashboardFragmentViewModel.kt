@@ -52,9 +52,22 @@ class DashboardFragmentViewModel(
     fun initializeSpinnerContent() {
         uiScope.launch {
             _rawSpinnerContent.value = withContext(Dispatchers.IO) {
-                cardTable.getAllCards()
+                cardTable.getCards()
             }
             _spinnerContent.value = getNamesFrom(_rawSpinnerContent.value)
+        }
+    }
+
+    // DEBUG: Clear all table
+    fun clearAllTable() {
+        uiScope.launch {
+            withContext(Dispatchers.IO) {
+                userTable.clear()
+                cardTable.clear()
+                installmentTable.clear()
+            }
+            _spinnerContent.value = listOf()
+            _rawSpinnerContent.value = listOf()
         }
     }
 }

@@ -21,4 +21,7 @@ interface InstallmentDao {
 
     @Query ("UPDATE installment SET status = :newStatus")
     fun setStatus(newStatus: String)
+
+    @Query ("DELETE FROM installment")
+    fun clear()
 }

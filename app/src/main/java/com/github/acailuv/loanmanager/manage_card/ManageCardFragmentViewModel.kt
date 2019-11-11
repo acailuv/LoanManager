@@ -27,7 +27,7 @@ class ManageCardFragmentViewModel(
     fun initializeCardList() {
         uiScope.launch {
             _cardList.value = withContext(Dispatchers.IO) {
-                cardTable.getAllCards()
+                cardTable.getCards()
             }
         }
     }

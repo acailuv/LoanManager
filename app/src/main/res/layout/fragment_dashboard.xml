@@ -9,136 +9,102 @@
             type="com.github.acailuv.loanmanager.dashboard.DashboardFragmentViewModel" />
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/padding">
-
-
-        <TextView
-            style="@style/h1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:text="@string/about_you" />
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/p"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="@dimen/margin"
-                    android:text="@string/name" />
-
-                <TextView
-                    android:id="@+id/user_name"
-                    style="@style/p"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@{viewModel.user.name}" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/p"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="@dimen/margin"
-                    android:text="@string/your_monthly_salary" />
-
-                <TextView
-                    android:id="@+id/monthly_income"
-                    style="@style/p"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@{String.valueOf(viewModel.user.monthlyIncome)}" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/p"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="@dimen/margin"
-                    android:text="@string/payment_due_this_month" />
-
-                <TextView
-                    android:id="@+id/about_you_payment_due"
-                    style="@style/p"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <TextView
-            style="@style/h1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/your_cards" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/p"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="@dimen/margin"
-                android:text="@string/quick_search"
-                android:textAlignment="center" />
-
-            <Spinner
-                android:id="@+id/card_select_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <!-- Spinner listener -> when changed -->
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/card_details_header"
-            style="@style/h2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="" />
-
-        <LinearLayout
-            android:id="@+id/card_details_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#f0f0f0"
             android:orientation="vertical"
             android:padding="@dimen/padding">
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.clearAllTable()}"
+                android:text="Clear database" />
+
             <TextView
-                style="@style/h3"
+                style="@style/h1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@string/about_you" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/p"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/margin"
+                        android:text="@string/name" />
+
+                    <TextView
+                        android:id="@+id/user_name"
+                        style="@style/p"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@{viewModel.user.name}" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/p"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/margin"
+                        android:text="@string/your_monthly_salary" />
+
+                    <TextView
+                        android:id="@+id/monthly_income"
+                        style="@style/p"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@{String.valueOf(viewModel.user.monthlyIncome)}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/p"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/margin"
+                        android:text="@string/payment_due_this_month" />
+
+                    <TextView
+                        android:id="@+id/about_you_payment_due"
+                        style="@style/p"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/h1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/your_cards" />
@@ -153,157 +119,206 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="@dimen/margin"
-                    android:text="@string/card_number"
+                    android:text="@string/quick_search"
                     android:textAlignment="center" />
 
-                <TextView
-                    android:id="@+id/card_details_number"
-                    style="@style/p"
+                <Spinner
+                    android:id="@+id/card_select_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="" />
+                    android:layout_height="wrap_content" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/p"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="@dimen/margin"
-                    android:text="@string/name_of_cardholder"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/cardholder_name"
-                    style="@style/p"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/p"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="@dimen/margin"
-                    android:text="@string/credit_limit_with_colon"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/credit_limit"
-                    style="@style/p"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/p"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="@dimen/margin"
-                    android:text="@string/issuing_bank_with_colon"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/issuing_bank"
-                    style="@style/p"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/p"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="@dimen/margin"
-                    android:text="@string/variant_with_colon"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/variant"
-                    style="@style/p"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/p"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="@dimen/margin"
-                    android:text="@string/grade_with_colon"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/grade"
-                    style="@style/p"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="" />
+                <!-- Spinner listener -> when changed -->
 
             </LinearLayout>
 
             <TextView
-                style="@style/h3"
+                android:id="@+id/card_details_header"
+                style="@style/h2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/installment" />
+                android:text="" />
 
             <LinearLayout
+                android:id="@+id/card_details_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:background="#f0f0f0"
+                android:orientation="vertical"
+                android:padding="@dimen/padding">
 
                 <TextView
-                    style="@style/p"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="@dimen/margin"
-                    android:text="@string/loan_in_this_card"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/card_details_loan"
-                    style="@style/p"
+                    style="@style/h3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="" />
+                    android:text="@string/your_cards" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/p"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/margin"
+                        android:text="@string/card_number"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/card_details_number"
+                        style="@style/p"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/p"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/margin"
+                        android:text="@string/name_of_cardholder"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/cardholder_name"
+                        style="@style/p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/p"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/margin"
+                        android:text="@string/credit_limit_with_colon"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/credit_limit"
+                        style="@style/p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/p"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/margin"
+                        android:text="@string/issuing_bank_with_colon"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/issuing_bank"
+                        style="@style/p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/p"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/margin"
+                        android:text="@string/variant_with_colon"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/variant"
+                        style="@style/p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/p"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/margin"
+                        android:text="@string/grade_with_colon"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/grade"
+                        style="@style/p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/h3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/installment" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/p"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/margin"
+                        android:text="@string/loan_in_this_card"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/card_details_loan"
+                        style="@style/p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
+            <com.jjoe64.graphview.GraphView
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 </layout>

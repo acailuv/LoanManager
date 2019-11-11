@@ -55,6 +55,7 @@ class DashboardFragment : Fragment() {
             if (it.isEmpty()) {
                 binding.cardDetailsContainer.visibility = View.INVISIBLE
                 binding.cardDetailsHeader.visibility = View.INVISIBLE
+                binding.cardSelectSpinner.adapter = null
 
             } else {
 
