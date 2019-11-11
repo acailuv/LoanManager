@@ -15,7 +15,7 @@
                 android:title="@string/add_a_credit_card_profile" />
 
             <item
-                android:id="@+id/nav_view_cards"
+                android:id="@+id/view_card"
                 android:icon="@drawable/ic_credit_card"
                 android:title="@string/view_credit_card_details" />
 

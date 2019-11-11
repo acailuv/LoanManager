@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.acailuv.loanmanager.R
 import com.github.acailuv.loanmanager.ViewModelFactory
@@ -49,9 +50,18 @@ class ManageCardFragment : Fragment() {
         recyclerView.setHasFixedSize(true)
         var recyclerAdapter: CardItemAdapter
 
-        viewModel.cardList.observe(this, Observer {
-            recyclerAdapter = CardItemAdapter(it)
+        viewModel.cardList.observe(this, Observer { cardList ->
+            recyclerAdapter = CardItemAdapter(cardList)
             recyclerView.adapter = recyclerAdapter
+            recyclerAdapter.setOnItemClickListener(object : CardItemAdapter.OnItemClickListener {
+                override fun onItemClick(position: Int) {
+                    findNavController().navigate(
+                        ManageCardFragmentDirections.actionManageCardFragmentToChangeCardDetailsFragment(
+                            cardList[position].id
+                        )
+                    )
+                }
+            })
         })
 
         // Inflate the layout for this fragment

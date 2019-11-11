@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.github.acailuv.loanmanager.add_card.AddCardFragmentViewModel" />
+            type="com.github.acailuv.loanmanager.manage_card.ChangeCardDetailsFragmentViewModel" />
     </data>
 
     <LinearLayout
@@ -20,7 +20,7 @@
             style="@style/h1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/add_a_card" />
+            android:text="@string/change_card_details" />
 
         <EditText
             android:id="@+id/card_nickname"
@@ -66,11 +66,19 @@
             android:hint="@string/grade_e_g_silver_gold_platinum" />
 
         <Button
-            android:id="@+id/add_card_button"
+            android:id="@+id/edit_card_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.onAddButtonClicked(cardNickname, cardNumber, cardholderName, creditLimit, issuingBank, variant, grade)}"
-            android:text="@string/add_a_card" />
+            android:onClick="@{() -> viewModel.onEditButtonClicked(cardNickname, cardNumber, cardholderName, creditLimit, issuingBank, variant, grade)}"
+            android:text="@string/change_card_details" />
+
+        <Button
+            android:id="@+id/delete_card_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_red_light"
+            android:onClick="@{() -> viewModel.onDeleteButtonClicked()}"
+            android:text="@string/delete_this_card" />
 
     </LinearLayout>
 </layout>

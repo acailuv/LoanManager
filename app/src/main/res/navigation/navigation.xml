@@ -13,7 +13,7 @@
         android:id="@+id/addCardFragment"
         android:name="com.github.acailuv.loanmanager.add_card.AddCardFragment"
         android:label="Add a Card"
-        tools:layout="@layout/fragment_add_card" >
+        tools:layout="@layout/fragment_add_card">
         <action
             android:id="@+id/action_addCardFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
@@ -26,5 +26,20 @@
         <action
             android:id="@+id/action_manageCardFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_manageCardFragment_to_changeCardDetailsFragment"
+            app:destination="@id/changeCardDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeCardDetailsFragment"
+        android:name="com.github.acailuv.loanmanager.manage_card.ChangeCardDetailsFragment"
+        android:label="Change Card Details"
+        tools:layout="@layout/fragment_change_card_details">
+        <argument
+            android:name="currentCard"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_changeCardDetailsFragment_to_manageCardFragment"
+            app:destination="@id/manageCardFragment" />
     </fragment>
 </navigation>

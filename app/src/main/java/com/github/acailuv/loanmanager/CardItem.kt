@@ -1,4 +1,4 @@
-package com.github.acailuv.loanmanager.manage_card
+package com.github.acailuv.loanmanager
 
 class CardItem(
     var imageIdResource: Int,

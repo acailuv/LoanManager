@@ -32,4 +32,6 @@
     <string name="issuing_bank_with_colon">Issuing Bank:</string>
     <string name="variant_with_colon">Variant:</string>
     <string name="grade_with_colon">Grade:</string>
+    <string name="change_card_details">Change Card Details</string>
+    <string name="delete_this_card">Delete This Card</string>
 </resources>
