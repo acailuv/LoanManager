@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.github.acailuv.loanmanager.view_card.ViewCardFragmentViewModel" />
+            type="com.github.acailuv.loanmanager.view_installment.ViewInstallmentFragmentViewModel" />
     </data>
 
     <LinearLayout
@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
-            android:text="@string/view_credit_card_details" />
+            android:text="@string/view_installments" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"

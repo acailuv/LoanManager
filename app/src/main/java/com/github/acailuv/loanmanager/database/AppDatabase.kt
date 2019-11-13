@@ -5,7 +5,7 @@ import androidx.room.*
 
 @Database(
     entities = [Card::class, Installment::class, User::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(DateConverter::class)

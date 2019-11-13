@@ -29,12 +29,12 @@
     <item android:title="@string/installment">
         <menu>
             <item
-                android:id="@+id/nav_add_installment"
+                android:id="@+id/addInstallmentFragment"
                 android:icon="@drawable/ic_add_installment"
                 android:title="@string/add_an_installment" />
 
             <item
-                android:id="@+id/nav_view_installment"
+                android:id="@+id/viewInstallmentFragment"
                 android:icon="@drawable/ic_installment"
                 android:title="@string/view_installments" />
 

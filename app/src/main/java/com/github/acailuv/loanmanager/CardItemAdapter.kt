@@ -4,8 +4,10 @@ import android.view.LayoutInflater
 import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import com.github.acailuv.loanmanager.database.Card
+import com.github.acailuv.loanmanager.database.Installment
 
 
 class CardItemAdapter(private val cardList: List<Card>) :
@@ -36,6 +38,7 @@ class CardItemAdapter(private val cardList: List<Card>) :
     override fun onBindViewHolder(holder: CardItemViewHolder, position: Int) {
         val currentCardItem = cardList[position]
 
+        holder.icon.setImageResource(R.drawable.ic_credit_card_big)
         holder.nickname.text = currentCardItem.nickname
         holder.cardholder.text = currentCardItem.cardholder
         holder.issuingBank.text = currentCardItem.bank
@@ -46,6 +49,7 @@ class CardItemAdapter(private val cardList: List<Card>) :
     class CardItemViewHolder(itemView: View, listener: OnItemClickListener) :
         RecyclerView.ViewHolder(itemView) {
 
+        var icon: ImageView = itemView.findViewById(R.id.icon)
         var nickname: TextView = itemView.findViewById(R.id.nickname)
         var cardholder: TextView = itemView.findViewById(R.id.cardholder)
         var issuingBank: TextView = itemView.findViewById(R.id.issuing_bank)

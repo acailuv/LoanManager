@@ -34,4 +34,9 @@
     <string name="grade_with_colon">Grade:</string>
     <string name="change_card_details">Change Card Details</string>
     <string name="delete_this_card">Delete This Card</string>
+    <string name="installment_name">Installment Name</string>
+    <string name="charge_to">Charge to</string>
+    <string name="tenor_month">Tenor (Month)</string>
+    <string name="total_loan_amount">Total Loan Amount</string>
+    <string name="interest">% Interest Per Month</string>
 </resources>
