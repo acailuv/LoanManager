@@ -43,13 +43,13 @@ class InstallmentItemAdapter(private val installmentList: List<Installment>) :
         val endDate = Calendar.getInstance()
         endDate.timeInMillis = currentCardItem.endDate
 
-        val dateFormat = SimpleDateFormat("dd mm yyyy")
+        val dateFormat = SimpleDateFormat("dd MMM yyyy")
 
         holder.icon.setImageResource(R.drawable.ic_installment_big)
         holder.nickname.text = currentCardItem.installmentName
-        holder.cardId.text = "Charged to Card ID: " + currentCardItem.cardId.toString()
+        holder.cardId.text = ""
         holder.startDate.text = dateFormat.format(startDate.time)
-        holder.endDate.text = dateFormat.format((endDate.time))
+        holder.endDate.text = dateFormat.format(endDate.time)
         holder.status.text = currentCardItem.status
     }
 
@@ -58,10 +58,10 @@ class InstallmentItemAdapter(private val installmentList: List<Installment>) :
 
         var icon: ImageView = itemView.findViewById(R.id.icon)
         var nickname: TextView = itemView.findViewById(R.id.nickname)
-        var cardId: TextView = itemView.findViewById(R.id.cardholder)
-        var startDate: TextView = itemView.findViewById(R.id.issuing_bank)
-        var endDate: TextView = itemView.findViewById(R.id.variant)
-        var status: TextView = itemView.findViewById(R.id.grade)
+        var startDate: TextView = itemView.findViewById(R.id.cardholder)
+        var endDate: TextView = itemView.findViewById(R.id.issuing_bank)
+        var status: TextView = itemView.findViewById(R.id.variant)
+        var cardId: TextView = itemView.findViewById(R.id.grade)
 
         val iHaveToDoThisToExecuteTheFollowingFunction = itemView.setOnClickListener {
             val position = adapterPosition

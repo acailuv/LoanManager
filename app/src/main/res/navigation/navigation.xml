@@ -16,7 +16,11 @@
         tools:layout="@layout/fragment_add_card">
         <action
             android:id="@+id/action_addCardFragment_to_dashboardFragment"
-            app:destination="@id/dashboardFragment" />
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/manageCardFragment"
@@ -25,10 +29,18 @@
         tools:layout="@layout/fragment_manage_card">
         <action
             android:id="@+id/action_manageCardFragment_to_dashboardFragment"
-            app:destination="@id/dashboardFragment" />
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_manageCardFragment_to_changeCardDetailsFragment"
-            app:destination="@id/changeCardDetailsFragment" />
+            app:destination="@id/changeCardDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/changeCardDetailsFragment"
@@ -41,6 +53,10 @@
         <action
             android:id="@+id/action_changeCardDetailsFragment_to_manageCardFragment"
             app:destination="@id/manageCardFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@+id/dashboardFragment" />
     </fragment>
     <fragment
@@ -50,10 +66,18 @@
         tools:layout="@layout/fragment_view_card">
         <action
             android:id="@+id/action_viewCardFragment_to_dashboardFragment"
-            app:destination="@id/dashboardFragment" />
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_viewCardFragment_to_viewCardDetailsFragment"
-            app:destination="@id/viewCardDetailsFragment" />
+            app:destination="@id/viewCardDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/viewCardDetailsFragment"
@@ -66,6 +90,10 @@
         <action
             android:id="@+id/action_viewCardDetailsFragment_to_viewCardFragment"
             app:destination="@id/viewCardFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@+id/dashboardFragment" />
     </fragment>
     <fragment
@@ -75,7 +103,11 @@
         tools:layout="@layout/fragment_add_installment">
         <action
             android:id="@+id/action_addInstallmentFragment_to_dashboardFragment"
-            app:destination="@id/dashboardFragment" />
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/viewInstallmentFragment"
@@ -85,5 +117,29 @@
         <action
             android:id="@+id/action_viewInstallmentFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_viewInstallmentFragment_to_viewInstallmentDetailsFragment"
+            app:destination="@id/viewInstallmentDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewInstallmentDetailsFragment"
+        android:name="com.github.acailuv.loanmanager.view_installment.ViewInstallmentDetailsFragment"
+        android:label="Installment Details"
+        tools:layout="@layout/fragment_view_installment_details">
+        <argument
+            android:name="currentInstallmentId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_viewInstallmentDetailsFragment_to_viewInstallmentFragment"
+            app:destination="@id/viewInstallmentFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/dashboardFragment" />
     </fragment>
 </navigation>

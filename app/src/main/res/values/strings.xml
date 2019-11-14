@@ -39,4 +39,9 @@
     <string name="tenor_month">Tenor (Month)</string>
     <string name="total_loan_amount">Total Loan Amount</string>
     <string name="interest">% Interest Per Month</string>
+    <string name="charged_to">Charged To</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="already_paid_amount">Already Paid Amount</string>
+    <string name="loan_status">Loan Status</string>
 </resources>

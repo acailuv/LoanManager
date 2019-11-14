@@ -20,11 +20,11 @@
             android:orientation="vertical"
             android:padding="@dimen/padding">
 
-<!--            <Button-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:onClick="@{() -> viewModel.clearAllTable()}"-->
-<!--                android:text="Clear database" />-->
+            <!--            <Button-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:onClick="@{() -> viewModel.clearAllTable()}"-->
+            <!--                android:text="Clear database" />-->
 
             <TextView
                 style="@style/h1"
@@ -116,9 +116,10 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    style="@style/p"
+                    style="@style/h3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_margin="0dp"
                     android:layout_marginEnd="@dimen/margin"
                     android:text="@string/quick_search"
                     android:textAlignment="center" />
@@ -319,7 +320,7 @@
                 android:id="@+id/graph"
                 android:layout_width="match_parent"
                 android:layout_height="200dip"
-                android:layout_marginTop="32dp"/>
+                android:layout_marginTop="32dp" />
 
         </LinearLayout>
 

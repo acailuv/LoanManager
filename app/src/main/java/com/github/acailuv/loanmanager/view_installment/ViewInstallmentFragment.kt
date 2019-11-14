@@ -49,16 +49,16 @@ class ViewInstallmentFragment : Fragment() {
         viewModel.installmentList.observe(this, Observer { installmentList ->
             recyclerAdapter = InstallmentItemAdapter(installmentList)
             recyclerView.adapter = recyclerAdapter
-            recyclerAdapter.setOnItemClickListener(object : InstallmentItemAdapter.OnItemClickListener {
+            recyclerAdapter.setOnItemClickListener(object :
+                InstallmentItemAdapter.OnItemClickListener {
                 override fun onItemClick(position: Int) {
-//                    findNavController().navigate(
-//                        ViewCardFragmentDirections.actionViewCardFragmentToViewCardDetailsFragment (
-//                            installmentList[position].id
-//                        )
-//                    )
+                    findNavController().navigate(
+                        ViewInstallmentFragmentDirections.actionViewInstallmentFragmentToViewInstallmentDetailsFragment(
+                            installmentList[position].id
+                        )
+                    )
                 }
             })
-            println(recyclerAdapter.itemCount)
         })
 
         binding.viewModel = viewModel

@@ -14,6 +14,7 @@ import com.github.acailuv.loanmanager.manage_card.ChangeCardDetailsFragmentViewM
 import com.github.acailuv.loanmanager.manage_card.ManageCardFragmentViewModel
 import com.github.acailuv.loanmanager.view_card.ViewCardDetailsFragmentViewModel
 import com.github.acailuv.loanmanager.view_card.ViewCardFragmentViewModel
+import com.github.acailuv.loanmanager.view_installment.ViewInstallmentDetailsFragmentViewModel
 import com.github.acailuv.loanmanager.view_installment.ViewInstallmentFragmentViewModel
 
 class ViewModelFactory(
@@ -22,7 +23,7 @@ class ViewModelFactory(
     private val installmentDataSource: InstallmentDao,
     private val application: Application,
     private val currentCardId: Long = 0L,
-    private val currentInstallment: Long = 0L
+    private val currentInstallmentId: Long = 0L
 ) : ViewModelProvider.Factory {
 
     @Suppress("unchecked_cast")
@@ -76,6 +77,13 @@ class ViewModelFactory(
                 userDataSource,
                 cardDataSource,
                 installmentDataSource,
+                application
+            ) as T
+            modelClass.isAssignableFrom(ViewInstallmentDetailsFragmentViewModel::class.java) -> return ViewInstallmentDetailsFragmentViewModel(
+                userDataSource,
+                cardDataSource,
+                installmentDataSource,
+                currentInstallmentId,
                 application
             ) as T
             else -> throw IllegalAccessException("ViewModel class not recognized.")

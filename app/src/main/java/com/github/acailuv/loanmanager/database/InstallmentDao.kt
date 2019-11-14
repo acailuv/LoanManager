@@ -10,6 +10,9 @@ interface InstallmentDao {
     @Update
     fun update(installment: Installment)
 
+    @Query ("SELECT * FROM installment WHERE id = :id")
+    fun getInstallment(id: Long): Installment
+
     @Query ("SELECT * FROM installment")
     fun getInstallments(): List<Installment>
 
