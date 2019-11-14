@@ -42,6 +42,11 @@ class ViewCardDetailsFragment : Fragment() {
             binding.creditLimit.text = currentCard.limit.toString()
             binding.variant.text = currentCard.variant
             binding.grade.text = currentCard.grade
+            viewModel.getTotalLoan(currentCard)
+        })
+
+        viewModel.totalLoanInCard.observe(this, Observer {  totalLoanInCard ->
+            binding.cardDetailsLoan.text = totalLoanInCard.toString()
         })
 
         binding.viewModel = viewModel

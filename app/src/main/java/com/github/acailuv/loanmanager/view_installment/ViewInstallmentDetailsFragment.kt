@@ -6,9 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.github.acailuv.loanmanager.R
 import com.github.acailuv.loanmanager.ViewModelFactory
 import com.github.acailuv.loanmanager.database.AppDatabase
@@ -56,10 +58,11 @@ class ViewInstallmentDetailsFragment : Fragment() {
             binding.installmentName.text = currentInstallment.installmentName
             binding.startDate.text = dateFormatter.format(startDate.time)
             binding.endDate.text = dateFormatter.format(endDate.time)
+            binding.tenorMonth.text = currentInstallment.tenorMonth.toString() + " Month(s)"
             binding.totalLoanAmount.text = currentInstallment.total.toString()
-            binding.interest.text = (currentInstallment.interest*100).toString() + "% per Month"
-            binding.paidAmount.text = currentInstallment.paidAmount.toString()
-            binding.status.text = currentInstallment.status
+            binding.interest.text = (currentInstallment.interest * 100).toString() + "% per Month"
+            // binding.paidAmount.text = currentInstallment.paidAmount.toString()
+            // binding.status.text = currentInstallment.status
         })
 
         viewModel.currentInstallmentCard.observe(this, Observer { installmentCard ->
@@ -70,6 +73,39 @@ class ViewInstallmentDetailsFragment : Fragment() {
             binding.variant.text = installmentCard.variant
             binding.grade.text = installmentCard.grade
         })
+
+        viewModel.exitStatus.observe(this, Observer {
+            when (it) {
+                "OK" -> findNavController().navigate(ViewInstallmentDetailsFragmentDirections.actionViewInstallmentDetailsFragmentToViewInstallmentFragment())
+            }
+        })
+
+        viewModel.confirmDelete.observe(this, Observer {
+            if (it == true) {
+                AlertDialog.Builder(this.context!!)
+                    .setTitle("Delete This Card?")
+                    .setMessage("Are you sure you want to delete this installment? This cannot be undone.")
+
+                    // Specifying a listener allows you to take an action before dismissing the dialog.
+                    // The dialog is automatically dismissed when a dialog button is clicked.
+                    .setPositiveButton(android.R.string.yes) { _, _ ->
+                        viewModel.deleteInstallment()
+                        this.findNavController().navigate(
+                            ViewInstallmentDetailsFragmentDirections
+                                .actionViewInstallmentDetailsFragmentToViewInstallmentFragment()
+                        )
+                        viewModel.clean()
+                    }
+
+                    // A null listener allows the button to dismiss the dialog and take no further action.
+                    .setNegativeButton(android.R.string.no, null)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show()
+                viewModel.resetConfirmDelete()
+            }
+        })
+
+        binding.viewModel = viewModel
 
         // Inflate the layout for this fragment
         return binding.root

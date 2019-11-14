@@ -7,7 +7,7 @@
     <string name="quick_search">Quick Search: </string>
     <string name="nickname">Nickname: </string>
     <string name="card_number">Card Number:</string>
-    <string name="loan_in_this_card">Loan in this card:</string>
+    <string name="loan_in_this_card">Total Loan in this card:</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
     <string name="add_a_credit_card_profile">Add a Credit Card Profile</string>
@@ -44,4 +44,8 @@
     <string name="end_date">End Date</string>
     <string name="already_paid_amount">Already Paid Amount</string>
     <string name="loan_status">Loan Status</string>
+    <string name="change_installment_details">Change Installment Details</string>
+    <string name="your_name">Your Name:</string>
+    <string name="change_your_basic_data">Change Your Basic Data</string>
+    <string name="delete_this_installment">Delete This Installment</string>
 </resources>

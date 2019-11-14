@@ -12,6 +12,8 @@ import com.github.acailuv.loanmanager.database.InstallmentDao
 import com.github.acailuv.loanmanager.database.UserDao
 import com.github.acailuv.loanmanager.manage_card.ChangeCardDetailsFragmentViewModel
 import com.github.acailuv.loanmanager.manage_card.ManageCardFragmentViewModel
+import com.github.acailuv.loanmanager.manage_installment.ChangeInstallmentDetailsFragmentViewModel
+import com.github.acailuv.loanmanager.manage_installment.ManageInstallmentFragmentViewModel
 import com.github.acailuv.loanmanager.view_card.ViewCardDetailsFragmentViewModel
 import com.github.acailuv.loanmanager.view_card.ViewCardFragmentViewModel
 import com.github.acailuv.loanmanager.view_installment.ViewInstallmentDetailsFragmentViewModel
@@ -84,6 +86,25 @@ class ViewModelFactory(
                 cardDataSource,
                 installmentDataSource,
                 currentInstallmentId,
+                application
+            ) as T
+            modelClass.isAssignableFrom(ManageInstallmentFragmentViewModel::class.java) -> return ManageInstallmentFragmentViewModel(
+                userDataSource,
+                cardDataSource,
+                installmentDataSource,
+                application
+            ) as T
+            modelClass.isAssignableFrom(ChangeInstallmentDetailsFragmentViewModel::class.java) -> return ChangeInstallmentDetailsFragmentViewModel(
+                userDataSource,
+                cardDataSource,
+                installmentDataSource,
+                currentInstallmentId,
+                application
+            ) as T
+            modelClass.isAssignableFrom(ChangeUserDataFragmentViewModel::class.java) -> return ChangeUserDataFragmentViewModel(
+                userDataSource,
+                cardDataSource,
+                installmentDataSource,
                 application
             ) as T
             else -> throw IllegalAccessException("ViewModel class not recognized.")

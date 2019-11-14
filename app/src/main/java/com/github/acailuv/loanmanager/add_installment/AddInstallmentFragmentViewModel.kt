@@ -66,6 +66,7 @@ class AddInstallmentFragmentViewModel(
                 newInstallment.installmentName = installmentName.text.toString()
                 newInstallment.startDate = now.timeInMillis
                 newInstallment.endDate = deadline.timeInMillis
+                newInstallment.tenorMonth = tenor.text.toString().toInt()
                 newInstallment.total = totalLoanAmount.text.toString().toLong()
                 newInstallment.interest = interest.text.toString().toFloat() / 100
 

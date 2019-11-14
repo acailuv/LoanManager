@@ -47,4 +47,33 @@ class ViewInstallmentDetailsFragmentViewModel(
         }
     }
 
+    private val _exitStatus = MutableLiveData<String>()
+    val exitStatus: LiveData<String>
+    get() = _exitStatus
+
+    private val _confirmDelete = MutableLiveData<Boolean>()
+    val confirmDelete: LiveData<Boolean>
+    get() = _confirmDelete
+
+    fun onDeleteButtonClicked() {
+        _confirmDelete.value = true
+    }
+
+    fun resetConfirmDelete() {
+        _confirmDelete.value = false
+    }
+
+    fun deleteInstallment() {
+        uiScope.launch {
+            withContext(Dispatchers.Default) {
+                installmentTable.delete(currentInstallmentId)
+            }
+            _exitStatus.value = "OK"
+        }
+    }
+
+    fun clean() {
+        _exitStatus.value = null
+    }
+
 }

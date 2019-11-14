@@ -48,7 +48,8 @@
                 <Spinner
                     android:id="@+id/card_select_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textEnd" />
 
             </LinearLayout>
 
@@ -252,8 +253,8 @@
                 android:id="@+id/add_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/add_an_installment"
-                android:onClick="@{() -> viewModel.onAddButtonClicked(installmentName, tenor, totalLoanAmount, interest)}" />
+                android:onClick="@{() -> viewModel.onAddButtonClicked(installmentName, tenor, totalLoanAmount, interest)}"
+                android:text="@string/add_an_installment" />
 
         </LinearLayout>
 

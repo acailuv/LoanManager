@@ -38,10 +38,10 @@
                 android:icon="@drawable/ic_installment"
                 android:title="@string/view_installments" />
 
-            <item
-                android:id="@+id/nav_edit_installment"
-                android:icon="@drawable/ic_edit"
-                android:title="@string/manage_installments" />
+<!--            <item-->
+<!--                android:id="@+id/manageInstallmentFragment"-->
+<!--                android:icon="@drawable/ic_edit"-->
+<!--                android:title="@string/manage_installments" />-->
         </menu>
     </item>
 

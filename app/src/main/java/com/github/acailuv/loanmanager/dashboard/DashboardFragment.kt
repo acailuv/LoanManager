@@ -12,31 +12,27 @@ import android.widget.ArrayAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.github.acailuv.loanmanager.R
 import com.github.acailuv.loanmanager.ViewModelFactory
 import com.github.acailuv.loanmanager.database.AppDatabase
 import com.github.acailuv.loanmanager.databinding.FragmentDashboardBinding
 import com.jjoe64.graphview.LegendRenderer
+import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter
 import com.jjoe64.graphview.series.LineGraphSeries
 import com.jjoe64.graphview.series.DataPoint
 
-
-/**
- * TODO(1) Monthly Loan
- * TODO(2) Graph
- */
-
 class DashboardFragment : Fragment() {
 
+    lateinit var binding: FragmentDashboardBinding
     lateinit var viewModel: DashboardFragmentViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_dashboard, container, false)
 
-        val binding: FragmentDashboardBinding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_dashboard, container, false)
 
         val application = requireNotNull(this.activity).application
         val userDataSource = AppDatabase.getInstance(application).userDao
@@ -51,6 +47,15 @@ class DashboardFragment : Fragment() {
         )
         viewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(DashboardFragmentViewModel::class.java)
+
+        binding.editUserData.setOnClickListener {
+            findNavController().navigate(DashboardFragmentDirections.actionDashboardFragmentToChangeUserDataFragment())
+            viewModel.initializeUserInfo()
+        }
+
+        viewModel.monthlyLoan.observe(this, Observer { monthlyLoan ->
+            binding.aboutYouPaymentDue.text = monthlyLoan.toString()
+        })
 
         viewModel.spinnerContent.observe(this, Observer {
             if (it.isEmpty()) {
@@ -87,6 +92,7 @@ class DashboardFragment : Fragment() {
                                 viewModel.rawSpinnerContent.value?.get(position)?.variant
                             binding.grade.text =
                                 viewModel.rawSpinnerContent.value?.get(position)?.grade
+                            viewModel.getTotalLoan(viewModel.rawSpinnerContent.value?.get(position))
                         }
 
                         override fun onNothingSelected(parent: AdapterView<*>) {
@@ -97,6 +103,10 @@ class DashboardFragment : Fragment() {
             }
         })
 
+        viewModel.totalLoanInCard.observe(this, Observer { totalLoanInCard ->
+            binding.cardDetailsLoan.text = totalLoanInCard.toString()
+        })
+
         viewModel.user.observe(this, Observer {
             binding.userName.text = it.name
             binding.monthlyIncome.text = it.monthlyIncome.toString()
@@ -105,43 +115,38 @@ class DashboardFragment : Fragment() {
         // Graph Testing
         val graph = binding.graph
         graph.title = "Installment Vs. Income"
-        graph.viewport.setScrollableY(true)
+        graph.viewport.isXAxisBoundsManual = true
+        graph.viewport.isScalable = true
+        graph.viewport.isScrollable = true
 
-        val series = LineGraphSeries<DataPoint>(
-            arrayOf(
-                DataPoint(0.0, -2.0),
-                DataPoint(1.0, 5.0),
-                DataPoint(2.0, 3.0),
-                DataPoint(3.0, 2.0),
-                DataPoint(4.0, 6.0),
-                DataPoint(5.0, -2.0),
-                DataPoint(6.0, 5.0),
-                DataPoint(7.0, 3.0),
-                DataPoint(8.0, 2.0),
-                DataPoint(9.0, 6.0)
-            )
-        )
-        series.color = Color.GREEN
-        series.title = "Income"
-        graph.addSeries(series)
+        viewModel.buildGraphSeries()
 
-        val series2 = LineGraphSeries<DataPoint>(
-            arrayOf(
-                DataPoint(0.0, 3.0),
-                DataPoint(1.0, 3.0),
-                DataPoint(2.0, 6.0),
-                DataPoint(3.0, 2.0),
-                DataPoint(4.0, 5.0),
-                DataPoint(5.0, 3.0),
-                DataPoint(6.0, 3.0),
-                DataPoint(7.0, 6.0),
-                DataPoint(8.0, 2.0),
-                DataPoint(9.0, 5.0)
-            )
-        )
-        series2.color = Color.RED
-        series2.title = "Installments"
-        graph.addSeries(series2)
+        viewModel.monthlyIncomeSeries.observe(this, Observer {
+            val incomeSeries = LineGraphSeries<DataPoint>(it)
+            incomeSeries.color = Color.GREEN
+            incomeSeries.title = "Income"
+            if (graph.series.size > 0) graph.removeAllSeries()
+            graph.addSeries(incomeSeries)
+        })
+
+        viewModel.monthlyLoanSeries.observe(this, Observer {
+            val monthlyLoanSeries = LineGraphSeries<DataPoint>(it)
+            monthlyLoanSeries.color = Color.RED
+            monthlyLoanSeries.title = "Installments"
+            graph.addSeries(monthlyLoanSeries)
+        })
+
+        graph.gridLabelRenderer.labelFormatter = DateAsXAxisLabelFormatter(activity)
+        graph.gridLabelRenderer.numHorizontalLabels = 3
+
+        viewModel.lowestDate.observe(this, Observer {
+            graph.viewport.setMinX(it.time.toDouble())
+        })
+
+        viewModel.highestDate.observe(this, Observer {
+            graph.viewport.setMaxX(it.time.toDouble())
+        })
+
         graph.legendRenderer.isVisible = true
         graph.legendRenderer.align = LegendRenderer.LegendAlign.BOTTOM
 

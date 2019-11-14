@@ -50,7 +50,7 @@ class InstallmentItemAdapter(private val installmentList: List<Installment>) :
         holder.cardId.text = ""
         holder.startDate.text = dateFormat.format(startDate.time)
         holder.endDate.text = dateFormat.format(endDate.time)
-        holder.status.text = currentCardItem.status
+        holder.status.text = ""
     }
 
     class InstallmentItemViewHolder(itemView: View, listener: OnItemClickListener) :

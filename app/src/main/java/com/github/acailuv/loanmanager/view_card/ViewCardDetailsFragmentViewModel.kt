@@ -38,5 +38,30 @@ class ViewCardDetailsFragmentViewModel(
         }
     }
 
+    val totalLoanInCard = MutableLiveData<Long>()
+
+    // Total Loan in a card
+    fun getTotalLoan(card: Card?) {
+        val cardId = card?.id
+
+        uiScope.launch {
+            val installmentList = withContext(Dispatchers.IO) {
+                installmentTable.getInstallments()
+            }
+
+            var sumTotalLoan = 0L
+
+            for (i in installmentList.indices) {
+
+                val currentInstallment = installmentList[i]
+
+                if (currentInstallment.cardId == cardId) {
+                    println("${currentInstallment.cardId} $cardId ${currentInstallment.total}")
+                    sumTotalLoan += currentInstallment.total
+                }
+            }
+            totalLoanInCard.value = sumTotalLoan
+        }
+    }
 
 }

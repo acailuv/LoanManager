@@ -1,6 +1,7 @@
 package com.github.acailuv.loanmanager.database
 
 import androidx.room.*
+import java.time.Month
 import java.util.*
 
 @Entity (tableName = "installment")
@@ -19,6 +20,9 @@ data class Installment (
 
     @ColumnInfo (name = "end_date")
     var endDate: Long = 1L,
+
+    @ColumnInfo (name = "tenor_month")
+    var tenorMonth: Int = 0,
 
     @ColumnInfo (name = "total")
     var total: Long = 0L,

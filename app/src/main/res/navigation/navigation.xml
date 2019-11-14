@@ -8,7 +8,11 @@
         android:id="@+id/dashboardFragment"
         android:name="com.github.acailuv.loanmanager.dashboard.DashboardFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboardFragment_to_changeUserDataFragment"
+            app:destination="@id/changeUserDataFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addCardFragment"
         android:name="com.github.acailuv.loanmanager.add_card.AddCardFragment"
@@ -141,5 +145,55 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@+id/dashboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/manageInstallmentFragment"
+        android:name="com.github.acailuv.loanmanager.manage_installment.ManageInstallmentFragment"
+        android:label="Manage Installments"
+        tools:layout="@layout/fragment_manage_installment">
+        <action
+            android:id="@+id/action_manageInstallmentFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_manageInstallmentFragment_to_changeInstallmentDetailsFragment"
+            app:destination="@id/changeInstallmentDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeInstallmentDetailsFragment"
+        android:name="com.github.acailuv.loanmanager.manage_installment.ChangeInstallmentDetailsFragment"
+        android:label="Change Installment's Details"
+        tools:layout="@layout/fragment_change_installment_details">
+        <argument
+            android:name="currentInstallmentId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_changeInstallmentDetailsFragment_to_manageInstallmentFragment"
+            app:destination="@id/manageInstallmentFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/dashboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeUserDataFragment"
+        android:name="com.github.acailuv.loanmanager.ChangeUserDataFragment"
+        android:label="Change Your Data"
+        tools:layout="@layout/fragment_change_user_data">
+        <action
+            android:id="@+id/action_changeUserDataFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 </navigation>

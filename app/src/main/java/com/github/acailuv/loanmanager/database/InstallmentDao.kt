@@ -16,6 +16,9 @@ interface InstallmentDao {
     @Query ("SELECT * FROM installment")
     fun getInstallments(): List<Installment>
 
+    @Query ("SELECT * FROM installment ORDER BY end_date")
+    fun getInstallmentsByEndDate(): List<Installment>
+
     @Query ("DELETE FROM installment WHERE id = :id")
     fun delete(id: Long)
 

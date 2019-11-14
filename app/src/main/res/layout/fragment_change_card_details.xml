@@ -83,7 +83,7 @@
                 android:id="@+id/delete_card_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/holo_red_light"
+                android:background="@android:color/holo_red_dark"
                 android:onClick="@{() -> viewModel.onDeleteButtonClicked()}"
                 android:text="@string/delete_this_card" />
 
